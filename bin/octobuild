@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+if $PROGRAM_NAME == __FILE__
+	ENV['BUNDLE_GEMFILE'] = File.expand_path('../../Gemfile', __FILE__)
+	require 'rubygems'
+	require 'bundler/setup'
+	$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+end
+
+require 'octobuild'
+
+installer = XcodeInstall::Installer.new
+
+if ENV['VERSIONS'].nil?
+	ENV['VERSIONS'] = installer.installed_versions.map(&:version).join(' ')
+end
+
+command = ARGV.join(' ')
+
+ENV['VERSIONS'].split(' ').each do |version|
+	puts "Building with Xcode #{version}..."
+	# TODO: Actually install Xcode version if not yet installed
+	xcode = installer.installed_versions.select { |x| x.version == version }.first
+	system("DEVELOPER_DIR='#{xcode.path}' #{command}")
+end
