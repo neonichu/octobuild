@@ -1,7 +1,5 @@
 # Octobuild
 
-⚠️ WIP ⚠️
-
 Execute your build and tests with a list of Xcode versions to ensure maximum compatibility.
 
 ## Usage
