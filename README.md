@@ -9,7 +9,7 @@ Execute your build and tests with a list of Xcode versions to ensure maximum com
 Specify a space-separated list of versions and the command to run:
 
 ```bash
-$ VERSIONS='6.2 6.3.2 6.4' ./bin/octobuild swift -version
+$ VERSIONS='6.2 6.3.2 6.4' octobuild swift -version
 Building with Xcode 6.2...
 Swift version 1.1 (swift-600.0.57.4)
 Target: x86_64-apple-darwin14.4.0
