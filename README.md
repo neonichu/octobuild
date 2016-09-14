@@ -1,5 +1,7 @@
 # Octobuild
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 Execute your build and tests with a list of Xcode versions to ensure maximum compatibility.
 
 ## Usage
